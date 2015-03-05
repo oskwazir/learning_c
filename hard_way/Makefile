@@ -4,5 +4,5 @@ all: clean
 	make ex4
 
 clean:
-	rm -f ex1 ex3 ex4
+	rm -f ex1 ex3 ex4 ex5
 	rm -rf *.dSYM/
