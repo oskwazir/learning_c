@@ -1,9 +1,6 @@
+BUILD-OUT: ex1 ex3 ex4 ex5 ex6 ex7
 all: clean
-	make ex1
-	make ex3
-	make ex4
-	make ex5
-	make ex6
+	make $(BUILD-OUT)
 clean:
-	rm -f ex1 ex3 ex4 ex5 ex6
+	rm -f ex1 ex3 ex4 ex5 ex6 ex7
 	rm -rf *.dSYM/
