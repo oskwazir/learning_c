@@ -16,6 +16,7 @@ int main(int argc, char *argv[]){
         name[1],
         name[2],
         name[3]);
-    
+
+    printf("name: %s.\n", name);
     return 0;
 }
