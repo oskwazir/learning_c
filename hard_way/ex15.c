@@ -15,7 +15,19 @@ int main(int argc, char *argv[]){
 
   //first way using indexing
   for(i = 0; i < count; i++){
-    printf("%s had lived for %d years.\n", names[i], ages[i]);
+    printf("%s has lived for %d years.\n", names[i], ages[i]);
+  }
+
+  printf("---\n");
+
+  //setup pointers to the start of the arrays
+  int *cur_age = ages;
+  char **cur_name = names;
+
+  // second way using pointers
+  for(i = 0; i < count; i++){
+    printf("%s is %d years old.\n",
+      *(cur_name+i), *(cur_age+i));
   }
 
   printf("---\n");
