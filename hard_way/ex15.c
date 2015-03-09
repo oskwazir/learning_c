@@ -15,7 +15,7 @@ int main(int argc, char *argv[]){
 
   //first way using indexing
   for(i = 0; i < count; i++){
-    printf("%s had  lived for %d years.\n", names[i], ages[i]);
+    printf("%s had lived for %d years.\n", names[i], ages[i]);
   }
 
   printf("---\n");
