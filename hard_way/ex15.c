@@ -32,5 +32,11 @@ int main(int argc, char *argv[]){
 
   printf("---\n");
 
+  //third way, pointers are just arrays
+  for(i = 0; i < count; i++){
+    printf("%s is still %d years old.\n",
+      cur_name[i], cur_age[i]);
+  }
+
   return 0;
 }
