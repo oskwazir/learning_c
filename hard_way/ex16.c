@@ -38,8 +38,8 @@ void Person_print(struct Person *who){
 
 int main(int argc, char *argv[]){
   //make two people structures
-  struct Person *cj = Person_create("CJ Anderson", 68, 24, 224);
-  struct Person *chris = Person_create("Chris Harris JR",70,25,199);
+  struct Person *cj = Person_create("CJ Anderson", 24, 68, 224);
+  struct Person *chris = Person_create("Chris Harris JR", 25, 70, 199);
 
   //print them out and where they are in memory
   printf("CJ is at memory location %p:\n", cj);
@@ -47,6 +47,21 @@ int main(int argc, char *argv[]){
 
   printf("Chris is at memory location %p:\n", chris);
   Person_print(chris);
+
+  //make everyone age by 20 years and print them again
+  cj->age += 20;
+  cj->height -= 2;
+  cj->weight += 12;
+  Person_print(cj);
+
+  chris->age += 10;
+  chris->height -= 4;
+  chris->weight += 7;
+  Person_print(chris);
+
+  // destroy them both so we clean up
+  Person_destroy(cj);
+  Person_destroy(chris);
 
   return 0;
 }
