@@ -14,6 +14,10 @@ struct Address {
   char email[MAX_DATA];
 };
 
+struct Database {
+  struct Address rows[MAX_ROWS];
+};
+
 int main(int argc, char *argv[]){
   return 0;
 }
