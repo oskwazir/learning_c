@@ -18,6 +18,11 @@ struct Database {
   struct Address rows[MAX_ROWS];
 };
 
+struct Connection {
+  FILE *file;
+  struct Database *db;
+};
+
 int main(int argc, char *argv[]){
   return 0;
 }
