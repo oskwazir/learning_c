@@ -43,6 +43,29 @@ void Database_load(struct Connection *conn){
   if(rc != 1) die("Failed to load database.");
 }
 
+struct Connection *Database_open(cont char *filename, char mode){
+  struct Connection *conn = malloc(sizeof(struct Connection));
+
+  if(!conn) die("Memory error");
+
+  conn->db = malloc(sizeof(struct Database));
+  if(!conn->db) die("Memory error");
+
+  if(mode == 'c'){
+    conn->file = fopen(filename, "w");
+  } else {
+    conn->file = fopen(filename, "r+");
+    
+    if(conn -> file){
+      Database_load(conn);
+    }
+  }
+
+  if(!conn->file) die("Failed to open the file.");
+
+  return conn;
+}
+
 int main(int argc, char *argv[]){
   return 0;
 }
