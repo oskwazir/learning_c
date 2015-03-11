@@ -66,6 +66,14 @@ struct Connection *Database_open(cont char *filename, char mode){
   return conn;
 }
 
+void Database_close(struct Connection *conn){
+  if(conn){
+    if(conn->file) fclose(conn->file);
+    if(conn->db) free(conn->db);
+    free(conn);
+  }
+};
+
 int main(int argc, char *argv[]){
   return 0;
 }
