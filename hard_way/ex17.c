@@ -23,6 +23,16 @@ struct Connection {
   struct Database *db;
 };
 
+void die(const char *message){
+  if(errno){
+    perror(message);
+  } else {
+    printf("Error: %s\n", message);
+  }
+
+  exit(1);
+}
+
 int main(int argc, char *argv[]){
   return 0;
 }
