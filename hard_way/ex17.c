@@ -33,6 +33,11 @@ void die(const char *message){
   exit(1);
 }
 
+void Address_print(struct Address *addr){
+  printf("%d %s %s\n",
+    addr->id, addr->name, addr->email);
+}
+
 int main(int argc, char *argv[]){
   return 0;
 }
