@@ -81,7 +81,14 @@ void Database_write(struct Connection *conn){
 }
 
 void Database_create(struct Connection *conn){
-  //TODO
+  int i = 0;
+
+  for(i = 0; i < MAX_ROWS;i++){
+    //make a prototype to intialize it
+    struct Address addr = {.id = i, .set = 0};
+    //then just assign it
+    conn->db->rows[i] = addr;
+  }
 }
 
 void Database_set(struct Connection *conn, int id, const char *name, const char *email){
