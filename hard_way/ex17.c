@@ -43,12 +43,11 @@ void Database_load(struct Connection *conn){
   if(rc != 1) die("Failed to load database.");
 }
 
-struct Connection *Database_open(cont char *filename, char mode){
+struct Connection *Database_open(const char *filename, char mode){
   struct Connection *conn = malloc(sizeof(struct Connection));
 
   if(!conn) die("Memory error");
-
-  conn->db = malloc(sizeof(struct Database));
+ conn->db = malloc(sizeof(struct Database));
   if(!conn->db) die("Memory error");
 
   if(mode == 'c'){
@@ -73,6 +72,34 @@ void Database_close(struct Connection *conn){
     free(conn);
   }
 };
+
+void Database_write(struct Connection *conn){
+  rewind(conn->file);
+
+  int rc = fwrite(conn->db, sizeof(struct Database), 1, conn->file);
+  if(rc == -1) die("Cannot flush database.");
+}
+
+void Database_create(struct Connection *conn){
+  //TODO
+}
+
+void Database_set(struct Connection *conn, int id, const char *name, const char *email){
+  //TODO
+}
+
+void Database_get(struct Connection *conn, int id){
+  //TODO
+}
+
+void Database_delete(struct Connection *conn, int id){
+  //TODO
+}
+
+void Database_list(struct Connection *conn){
+  //TODO
+}
+
 
 int main(int argc, char *argv[]){
   return 0;
