@@ -115,7 +115,8 @@ void Database_get(struct Connection *conn, int id){
 }
 
 void Database_delete(struct Connection *conn, int id){
-  //TODO
+  struct Address addr = {.id = id, .set = 0};
+  conn->db->rows[id] = addr;
 }
 
 void Database_list(struct Connection *conn){
