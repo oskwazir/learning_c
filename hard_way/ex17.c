@@ -120,7 +120,16 @@ void Database_delete(struct Connection *conn, int id){
 }
 
 void Database_list(struct Connection *conn){
-  //TODO
+  int i = 0;
+  struct Database *db = conn->db;
+
+  for(i=0;i < MAX_ROWS; i++){
+    struct Address *cur = &db->rows[i];
+
+    if(cur->set){
+      Address_print(cur);
+    }
+  }
 }
 
 
