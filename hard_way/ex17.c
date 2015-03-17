@@ -105,7 +105,13 @@ void Database_set(struct Connection *conn, int id, const char *name, const char 
 }
 
 void Database_get(struct Connection *conn, int id){
-  //TODO
+  struct Address *addr = &conn->db->rows[id];
+
+  if(addr->set){
+    Address_print(addr);
+  } else {
+    die("ID is not set");
+  }
 }
 
 void Database_delete(struct Connection *conn, int id){
