@@ -7,4 +7,4 @@ all:  ex1.c ex3.c ex4.c ex5.c ex6.c \
 clean:
 	rm -f ex1 ex3 ex4 ex5 ex6 ex7 ex8 ex9 \
 	 ex10 ex11 ex12 ex13 ex14 ex15 ex16 ex17 ex18
-	rm -rf *.dSYM/
+	rm -rf *.dSYM/ db.dat
