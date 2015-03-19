@@ -61,8 +61,23 @@ int strange_order(int a, int b){
   }
 }
 
+/**
+* Used to test the sorting by doing the sorting and 
+* printing results.
+*/
+
 void test_sorting(int *numbers, int count, compare_cb cmp){
-  return;
+  int i = 0;
+  int *sorted = bubble_sort(numbers, count, cmp);
+
+  if(!sorted) die("Failed to sort as requested.");
+
+  for(i=0; i<count; i++){
+    printf("%d ", sorted[i]);
+  }
+  printf("\n");
+
+  free(sorted);
 }
 
 int main(int argc, char *argv[]){
