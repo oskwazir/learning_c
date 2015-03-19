@@ -54,7 +54,11 @@ int reverse_order(int a, int b){
 }
 
 int strange_order(int a, int b){
-  return 0;
+  if(a == 0 || b == 0){
+    return 0;
+  } else {
+    return a % b;
+  }
 }
 
 void test_sorting(int *numbers, int count, compare_cb cmp){
